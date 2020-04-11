@@ -13,13 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-import xiaoxiannv
+from django.urls import path
+from xiaoxiannv.loginapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login/', include('loginapp.urls')),
-    path('register/', include('registerapp.urls')),
-    path('flowers/', include('flowers.urls')),
+    path('', views.Login.as_view(), name='login'),
 ]
